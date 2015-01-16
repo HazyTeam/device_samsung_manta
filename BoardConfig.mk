@@ -32,6 +32,13 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 
+# Enable QC's libm optimizations
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
+# Define kernel config for inline building
+TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/manta
+
 #Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -52,6 +59,7 @@ USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 TARGET_RECOVERY_FSTAB = device/samsung/manta/fstab.manta
+RECOVERY_FSTAB_VERSION := 2
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 685768704
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 14273216512
@@ -79,6 +87,16 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_manta
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/manta
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+BOARD_RECOVERY_SWIPE := true
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Default card id for USB audio
+BOARD_USB_AUDIO_CARD_ID := 2
+
+# Support WebGL in WebKit
+ENABLE_WEBGL := true
 
 BOARD_SEPOLICY_DIRS += \
 	device/samsung/manta/sepolicy

@@ -69,6 +69,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
 
 PRODUCT_COPY_FILES += \
@@ -105,7 +106,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     nfc_nci.bcm2079x.default \
     NfcNci \
-    Tag
+    Tag \
+    com.android.nfc_extras
+
+# Torch
+PRODUCT_PACKAGES += Torch
+
+# NFCEE access control
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    NFCEE_ACCESS_PATH := device/samsung/manta/nfc/nfcee_access.xml
+else
+    NFCEE_ACCESS_PATH := device/samsung/manta/nfc/nfcee_access_debug.xml
+endif
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \

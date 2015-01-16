@@ -29,6 +29,12 @@
     <!-- Default LED off time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOff">5000</integer>
 
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">true</bool>
+
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveBatteryLed">true</bool>
+
     <!-- This device is not "voice capable"; it's data-only. -->
     <bool name="config_voice_capable">false</bool>
 
@@ -191,6 +197,5 @@
 
     <bool name="config_enableWifiDisplay">true</bool>
 
-    <!-- Translucent status & navigation bars perform poorly on this device -->
-    <bool name="config_enableTranslucentDecor">false</bool>
+    <bool name="config_enableTranslucentDecor">true</bool>
 </resources>
