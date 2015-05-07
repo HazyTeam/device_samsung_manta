@@ -36,7 +36,7 @@ TARGET_CPU_VARIANT := cortex-a15
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
+TARGET_KERNEL_CONFIG := hazy_manta_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 
 #Bluetooth
@@ -62,6 +62,8 @@ TARGET_RECOVERY_FSTAB = device/samsung/manta/fstab.manta
 RECOVERY_FSTAB_VERSION := 2
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 685768704
+# Disable journaling on system.img to save space.
+BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 14273216512
 BOARD_CACHEIMAGE_PARTITION_SIZE := 553648128
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -113,3 +115,5 @@ BOARD_SEPOLICY_UNION += \
 	system_server.te
 
 MALLOC_IMPL := dlmalloc
+
+BOARD_INV_LIBMLLITE_FROM_SOURCE := true

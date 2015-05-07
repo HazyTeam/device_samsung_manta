@@ -1,8 +1,6 @@
 [
     {
-      "remote": "github",
       "repository": "android_kernel_samsung_manta",
-      "target_path": "kernel/samsung/manta",
-      "revision": "hazypop"
+      "target_path": "kernel/samsung/manta"
     }
 ]
